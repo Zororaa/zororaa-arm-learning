@@ -38,7 +38,10 @@ jobs:
           subscriptionId: 08335517-f87b-4ad8-ab7b-64a80313767b
           region: UK South
           template: .github/workflows/arm-templates/storageaccount.json
-          parameters: .github/workflows/arm-templates/storageaccount.parameters.json
+          parameters: 
+            .github/workflows/arm-templates/storageaccount.parameters.json
+            storageAccountName = globostgtn002
+            location = UK South
           deploymentMode: incremental
 
     # inline Azure CLI 
