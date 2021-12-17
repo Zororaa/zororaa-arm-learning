@@ -28,10 +28,14 @@ jobs:
           subscriptionId: 08335517-f87b-4ad8-ab7b-64a80313767b
           region: UK South
           template: .github/workflows/arm-templates/resourcegroup.json
+          parameters:
+            location="UK South"
+            resourceGroupName:rg-githubactions
           deploymentName: rg-githubactions
 
       - name: Deploy Storage Account
         uses: Azure/arm-deploy@v1
+        id: storageAccountDeploy # ID used to identify a work flow task
         with:
           scope: resourcegroup
           resourceGroupName: rg-githubactions
@@ -45,6 +49,7 @@ jobs:
               location="UK South"
           deploymentMode: incremental
 
+      - run: echo ${{ steps.storageAccountDeploy.outputs.BlobUri  }}
     # inline Azure CLI 
     #  - name: Deploy Resource Group rg-githubactions with AZ CLI
     #    uses: Azure/cli@v1
