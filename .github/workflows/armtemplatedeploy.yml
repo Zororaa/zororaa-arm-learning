@@ -29,7 +29,7 @@ jobs:
           region: UK South
           template: .github/workflows/arm-templates/resourcegroup.json
           parameters:
-            location="UK South"
+            location=UK South
             resourceGroupName:rg-githubactions
           deploymentName: rg-githubactions
 
@@ -49,7 +49,10 @@ jobs:
               location="UK South"
           deploymentMode: incremental
 
-      - run: echo ${{ steps.storageAccountDeploy.outputs.BlobUri  }}
+      - run: echo ${{steps.storageAccountDeploy.outputs.BlobUri}}
+
+
+
     # inline Azure CLI 
     #  - name: Deploy Resource Group rg-githubactions with AZ CLI
     #    uses: Azure/cli@v1
