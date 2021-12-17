@@ -61,7 +61,7 @@ jobs:
           template: .github/workflows/arm-templates/virtualmachine.json
           parameters: 
             #.github/workflows/arm-templates/storageaccount.parameters.json
-              adminPassword="My$ecureP@ssword!"
+              adminPassword=${{ secrets.UBUNTU_ADMIN_PASSWORD }}
           deploymentMode: incremental
 
 
