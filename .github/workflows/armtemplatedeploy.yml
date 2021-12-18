@@ -61,14 +61,14 @@ jobs:
         uses: Azure/arm-deploy@v1
         with:
           scope: resourcegroup
-          resourceGroupName: rg-githubactions
+          resourceGroupName: ${{ env.env_resource_group_name }}
           subscriptionId: ${{ env.env_subscriptionId }}
           region: "${{ env.env_location }}"
           template: .github/workflows/arm-templates/virtualmachine.json
           parameters: 
             #.github/workflows/arm-templates/storageaccount.parameters.json
-              adminPassword = ${{ secrets.UBUNTU_ADMIN_PASSWORD }}
-              location ="${{ env.env_location }}"
+              adminPassword = ${{secrets.UBUNTU_ADMIN_PASSWORD}}
+              location ="${{env.env_location}}"
           deploymentMode: incremental
 
 
