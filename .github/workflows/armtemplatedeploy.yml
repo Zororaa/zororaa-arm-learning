@@ -67,8 +67,8 @@ jobs:
           template: .github/workflows/arm-templates/virtualmachine.json
           parameters: 
             #.github/workflows/arm-templates/storageaccount.parameters.json
-              adminPassword = ${{secrets.UBUNTU_ADMIN_PASSWORD}}
-              location ="${{env.env_location}}"
+              adminPassword=${{secrets.UBUNTU_ADMIN_PASSWORD}}
+              location="${{env.env_location}}"
           deploymentMode: incremental
 
 
