@@ -23,7 +23,7 @@ jobs:
         env_resource_group_name: rg-stg-githubactions
         env_location: "UK South"
     environment:
-      name: staging
+        name: staging
 
     steps:
       - uses: actions/checkout@v2
@@ -84,7 +84,7 @@ jobs:
         env_resource_group_name: rg-prod-githubactions
         env_location: "UK South"
     environment:
-      name: production
+        name: production
 
     needs: armDeployStaging
 
