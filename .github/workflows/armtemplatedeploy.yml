@@ -9,7 +9,7 @@ on:
 #Environmental Variables
 
 env: #disabled the workflow environment
-  env_resource_group_name: rg-githubactions
+  env_resource_group_name: rg-stg-githubactions
   env_location: "UK South"
   env_subscriptionId: 08335517-f87b-4ad8-ab7b-64a80313767b
 
@@ -17,11 +17,7 @@ jobs:
   armDeployStaging:
     name: Deploy to Staging
     runs-on: ubuntu-latest
-    #env:
-        #env_resource_group_name: rg-stg-githubactions
-        #env_location: "UK South"
-    #environment:
-     # name: staging
+
 
     steps:
       - uses: actions/checkout@v2
@@ -31,7 +27,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Deploy Resource Group rg-githubactions
+      - name: Deploy Resource Group ${{ env_resource_group_name }}
         uses: Azure/arm-deploy@v1
         with:
           scope: subscription
@@ -43,7 +39,7 @@ jobs:
           #    resourceGroupName:rg-githubactions
           deploymentName: ${{ env.env_resource_group_name }}
 
-      - name: Deploy Storage Account
+      - name: Deploy Storage Account 
         uses: Azure/arm-deploy@v1
         id: storageAccountDeploy # ID used to identify a work flow task
         with:
