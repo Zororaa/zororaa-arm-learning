@@ -39,8 +39,8 @@ jobs:
           region: "${{ env.env_location }}"
           template: .github/workflows/arm-templates/resourcegroup.json
           parameters:
-             #location="UK South"
-             #resourceGroupName:rg-stg-githubactions
+             location="UK South"
+             resourceGroupName:rg-stg-githubactions
           deploymentName: ${{ env.env_resource_group_name }}
 
       #- name: Deploy Storage Account
