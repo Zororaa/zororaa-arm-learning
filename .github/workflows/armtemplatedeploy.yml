@@ -43,21 +43,21 @@ jobs:
              #resourceGroupName:rg-githubactions
           deploymentName: ${{ env.env_resource_group_name }}
 
-      #- name: Deploy Storage Account
-       # uses: Azure/arm-deploy@v1
-        #id: storageAccountDeploy # ID used to identify a work flow task
-       # with:
-         # scope: resourcegroup
-          #resourceGroupName: ${{ env.env_resource_group_name }}
-         # subscriptionId: ${{ env.env_subscriptionId }}
-          #region: "${{ env.env_location }}"
-         # template: .github/workflows/arm-templates/storageaccount.json
-          #parameters: 
+      - name: Deploy Storage Account
+        uses: Azure/arm-deploy@v1
+        id: storageAccountDeploy # ID used to identify a work flow task
+        with:
+          scope: resourcegroup
+          resourceGroupName: ${{ env.env_resource_group_name }}
+          subscriptionId: ${{ env.env_subscriptionId }}
+          region: "${{ env.env_location }}"
+          template: .github/workflows/arm-templates/storageaccount.json
+          parameters: 
             #.github/workflows/arm-templates/storageaccount.parameters.json
-             # sku=Standard_LRS
-             # storageAccountName=globostgtn002
-              #location="${{ env.env_location }}"
-          #deploymentMode: incremental
+             sku=Standard_LRS
+             storageAccountName=globostgtn002
+            location="${{ env.env_location }}"
+          deploymentMode: incremental
 
      # - run: echo ${{steps.storageAccountDeploy.outputs.BlobUri}} # Output referenced from storageaccount.json
 
