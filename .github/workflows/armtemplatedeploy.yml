@@ -45,7 +45,7 @@ jobs:
 
       - name: Deploy Storage Account
         uses: Azure/arm-deploy@v1
-        id: storageAccountDeploy # ID used to identify a work flow task
+        #id: storageAccountDeploy # ID used to identify a work flow task
         with:
           scope: resourcegroup
           resourceGroupName: ${{ env.env_resource_group_name }}
