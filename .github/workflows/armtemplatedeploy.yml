@@ -9,7 +9,7 @@ on:
 #Environmental Variables
 
 env: #disabled the workflow environment
-  env_resource_group_name: rg-stg-githubactions
+  env_resource_group_name: rg-githubactions
   env_location: "UK South"
   env_subscriptionId: 08335517-f87b-4ad8-ab7b-64a80313767b
 
