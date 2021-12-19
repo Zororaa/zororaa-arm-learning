@@ -10,7 +10,7 @@ on:
 
 env: #disabled the workflow environment
   env_resource_group_name: rg-stg-githubactions
-  env_location: "UK South"
+  env_location: UK South
   env_subscriptionId: 08335517-f87b-4ad8-ab7b-64a80313767b
 
 jobs:
@@ -39,7 +39,7 @@ jobs:
           region: "${{ env.env_location }}"
           template: .github/workflows/arm-templates/resourcegroup.json
           parameters:
-             location="${{ env.env_location }}"
+             location= "${{ env.env_location }}"
              resourceGroupName:${{ env.env_resource_group_name }}
           deploymentName: ${{ env.env_resource_group_name }}
 
