@@ -20,8 +20,8 @@ jobs:
     #env:
         #env_resource_group_name: rg-stg-githubactions
         #env_location: "UK South"
-    environment:
-      name: staging
+    #environment:
+     # name: staging
 
     steps:
       - uses: actions/checkout@v2
@@ -40,7 +40,7 @@ jobs:
           template: .github/workflows/arm-templates/resourcegroup.json
           parameters:
              location="UK South"
-             resourceGroupName:rg-stg-githubactions
+             resourceGroupName:${{ env.env_resource_group_name }}
           deploymentName: ${{ env.env_resource_group_name }}
 
       #- name: Deploy Storage Account
