@@ -39,7 +39,7 @@ jobs:
           region: "${{ env.env_location }}"
           template: .github/workflows/arm-templates/resourcegroup.json
           parameters:
-             location="UK South"
+             location="${{ env.env_location }}"
              resourceGroupName:${{ env.env_resource_group_name }}
           deploymentName: ${{ env.env_resource_group_name }}
 
