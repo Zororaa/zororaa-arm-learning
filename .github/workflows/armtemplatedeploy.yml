@@ -11,8 +11,6 @@ on:
 #Environmental Variables
 
 env: #disabled the workflow environment
-  #env_resource_group_name: rg-githubactions
-  env_location: "UK South"
   env_subscriptionId: 08335517-f87b-4ad8-ab7b-64a80313767b
 
 jobs:
@@ -22,7 +20,7 @@ jobs:
     env:
         env_resource_group_name: rg-stg-githubactions
         env_location: "UK South"
-    environment:
+    environment: # Provide the name of the environment
         name: staging
 
     steps:
@@ -50,7 +48,7 @@ jobs:
         id: storageAccountDeploy # ID used to identify a work flow task
         with:
           scope: resourcegroup
-          resourceGroupName: rg-stg-githubactions #${{ env.env_resource_group_name }}
+          resourceGroupName: ${{ env.env_resource_group_name }}
           subscriptionId: ${{ env.env_subscriptionId }}
           region: "${{ env.env_location }}"
           template: .github/workflows/arm-templates/storageaccount.json
