@@ -3,15 +3,12 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "storageAccountName": {
-            "type": "string",
             "value": "globostgtn001"
         },
         "location": {
-            "type": "string",
             "value": "UK South"
         },
         "sku": {
-            "type": "string",
             "value": "Standard_LRS"
         }
     }
