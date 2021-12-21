@@ -39,7 +39,7 @@ jobs:
           #    resourceGroupName:rg-githubactions
           deploymentName: ${{ env.env_resource_group_name }}
 
-      - name: Deploy Storage Account 
+      - name: Deploy Storage Account to ${{ env.env_resource_group_name }}
         uses: Azure/arm-deploy@v1
         id: storageAccountDeploy # ID used to identify a work flow task
         with:
@@ -57,7 +57,7 @@ jobs:
 
      # - run: echo ${{steps.storageAccountDeploy.outputs.BlobUri}} # Output referenced from storageaccount.json
 
-      - name: Deploy Virtual machine
+      - name: Deploy Virtual machine to ${{ env.env_resource_group_name }}
         uses: Azure/arm-deploy@v1
         with:
           scope: resourcegroup
