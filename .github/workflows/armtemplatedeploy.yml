@@ -35,7 +35,7 @@ jobs:
         with:
           scope: subscription
           subscriptionId: ${{ env.env_subscriptionId }}
-          region: "UK South"
+          region: ${{ env.env_location }}
           template: .github/workflows/arm-templates/resourcegroup.json
           # parameters:
           #    location="UK South"
@@ -111,10 +111,10 @@ jobs:
           resourceGroupName: ${{ env.env_resource_group_name }}
           subscriptionId: ${{ env.env_subscriptionId }}
           template: .github/workflows/arm-templates/storageaccount.json
-          parameters: .github/workflows/arm-templates/storageaccount.parameters.json
-                #sku=Standard_LRS
-                #storageAccountName=globostg003
-                #location="${{ env.env_location }}"
+          parameters: #.github/workflows/arm-templates/storageaccount.parameters.json
+                sku=Standard_LRS
+                storageAccountName=globostg003
+                location="${{ env.env_location }}"
           deploymentMode: incremental
 
      # - run: echo ${{steps.storageAccountDeploy.outputs.BlobUri}} # Output referenced from storageaccount.json
