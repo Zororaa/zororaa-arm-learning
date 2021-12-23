@@ -114,6 +114,7 @@ jobs:
           parameters: 
             .github/workflows/arm-templates/storageaccount.parameters.json
             storageAccountName=globostg002
+            location="${{env.env_location}}"
           deploymentMode: incremental
 
      # - run: echo ${{steps.storageAccountDeploy.outputs.BlobUri}} # Output referenced from storageaccount.json
