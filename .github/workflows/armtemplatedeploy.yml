@@ -52,7 +52,7 @@ jobs:
           template: .github/workflows/arm-templates/storageaccount.json
           parameters: .github/workflows/arm-templates/storageaccount.parameters.json
                 #sku=Standard_LRS
-                #storageAccountName=globostg002
+                #storageAccountName=globostg001
                 #location="UK South" #"${{ env.env_location }}"
           deploymentMode: incremental
 
@@ -112,8 +112,8 @@ jobs:
           subscriptionId: ${{ env.env_subscriptionId }}
           template: .github/workflows/arm-templates/storageaccount.json
           parameters: #.github/workflows/arm-templates/storageaccount.parameters.json
-                sku=Standard_LRS
-                storageAccountName=globostg003
+                #sku=Standard_LRS
+                storageAccountName=globostg002
                 location="${{ env.env_location }}"
           deploymentMode: incremental
 
