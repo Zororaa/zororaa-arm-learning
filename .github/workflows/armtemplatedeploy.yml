@@ -129,9 +129,8 @@ jobs:
           parameters: 
             #.github/workflows/arm-templates/storageaccount.parameters.json
               adminPassword=${{secrets.UBUNTU_ADMIN_PASSWORD}}
-              location="${{env.env_location}}"
+              #location="${{env.env_location}}"
           deploymentMode: incremental
-          
 
     # inline Azure CLI 
     #  - name: Deploy Resource Group rg-githubactions with AZ CLI
