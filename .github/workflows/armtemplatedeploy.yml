@@ -78,7 +78,6 @@ jobs:
     env: #disabled the workflow environment
         env_resource_group_name: rg-prod-githubactions
         env_location: "UK South"
-
     environment:
       name: production
 
@@ -112,7 +111,7 @@ jobs:
           subscriptionId: ${{ env.env_subscriptionId }}
           template: .github/workflows/arm-templates/storageaccount.json
           parameters: 
-            .github/workflows/arm-templates/storageaccount.parameters.json
+            #.github/workflows/arm-templates/storageaccount.parameters.json
             storageAccountName=globostg002
             location="${{env.env_location}}"
           deploymentMode: incremental
