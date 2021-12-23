@@ -77,7 +77,7 @@ jobs:
     runs-on: ubuntu-latest
     env: #disabled the workflow environment
         env_resource_group_name: rg-prod-githubactions
-        env_location: "UK South"
+        env_location: "UKSouth"
     environment:
       name: production
 
@@ -126,7 +126,7 @@ jobs:
           resourceGroupName: ${{ env.env_resource_group_name }}
           subscriptionId: ${{ env.env_subscriptionId }}
           template: .github/workflows/arm-templates/virtualmachine.json
-          parameters: 
+          parameters:
               adminPassword=${{secrets.UBUNTU_ADMIN_PASSWORD}}
               location="${{env.env_location}}"
           deploymentMode: incremental
