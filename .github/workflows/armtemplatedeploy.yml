@@ -77,7 +77,7 @@ jobs:
     runs-on: ubuntu-latest
     env: #disabled the workflow environment
         env_resource_group_name: rg-prod-githubactions
-        env_location: "UK South"
+        env_location: UK South
     environment:
       name: production
 
