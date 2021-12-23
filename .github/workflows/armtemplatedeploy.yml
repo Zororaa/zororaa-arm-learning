@@ -45,7 +45,7 @@ jobs:
         with:
           scope: resourcegroup
           resourceGroupName: rg-stg-githubactions # ${{ env.env_resource_group_name }}
-          subscriptionId: 08335517-f87b-4ad8-ab7b-64a80313767b #${{ env.env_subscriptionId }}
+          subscriptionId: ${{ env.env_subscriptionId }}
           template: .github/workflows/arm-templates/storageaccount.json
           parameters: .github/workflows/arm-templates/storageaccount.parameters.json
                 #sku=Standard_LRS
@@ -61,7 +61,6 @@ jobs:
           scope: resourcegroup
           resourceGroupName: ${{ env.env_resource_group_name }}
           subscriptionId: ${{ env.env_subscriptionId }}
-          #region: "${{ env.env_location }}"
           template: .github/workflows/arm-templates/virtualmachine.json
           parameters: 
             #.github/workflows/arm-templates/storageaccount.parameters.json
