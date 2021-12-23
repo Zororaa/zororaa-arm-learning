@@ -112,7 +112,7 @@ jobs:
           template: .github/workflows/arm-templates/storageaccount.json
           parameters: 
             #.github/workflows/arm-templates/storageaccount.parameters.json
-            storageAccountName=globostg002
+            storageAccountName=globostg003
             location="${{env.env_location}}"
           deploymentMode: incremental
 
