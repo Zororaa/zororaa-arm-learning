@@ -77,7 +77,7 @@ jobs:
     runs-on: ubuntu-latest
     env: #disabled the workflow environment
         env_resource_group_name: rg-prod-githubactions
-        env_location: "UKSouth"
+        env_location: "UK South"
     environment:
       name: production
 
@@ -128,7 +128,7 @@ jobs:
           template: .github/workflows/arm-templates/virtualmachine.json
           parameters:
               adminPassword=${{secrets.UBUNTU_ADMIN_PASSWORD}}
-              location="${{env.env_location}}"
+              location=""${{ env.env_location }}"
           deploymentMode: incremental
 
     # inline Azure CLI 
